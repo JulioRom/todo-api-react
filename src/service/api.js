@@ -28,11 +28,11 @@ export const createUser = async (username) => {
             headers: { "Content-Type": "application/json" },
         });
         if (!response.ok) {
-            throw new Error("Failed to create task list");
+            throw new Error({"message":"User already exists."});
         }
         return await response.json();
     } catch (error) {
-        console.error("Error creating task list:", error);
+        console.error("Error creating User:", error);
         throw error;
     }
 };

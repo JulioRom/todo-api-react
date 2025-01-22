@@ -1,14 +1,15 @@
 # Todo List App
 
-Esta es una aplicación de gestión de tareas desarrollada en React, que se sincroniza en tiempo real con una API REST. Permite agregar, visualizar, actualizar y eliminar tareas de manera dinámica.
+Esta es una aplicación de gestión de tareas creada en React, que se sincroniza en tiempo real con una API REST. Te permite agregar, ver, actualizar, eliminar tareas y administrar usuarios de forma dinámica.
 
-## Características
+##Características
 
-- **Agregar Tareas**: Crea nuevas tareas y sincronízalas automáticamente con el backend.
-- **Actualizar Tareas**: Cambia el estado de una tarea entre completada y pendiente.
-- **Eliminar Tareas**: Borra tareas individuales o limpia toda la lista.
-- **Sincronización en Tiempo Real**: Mantiene las tareas sincronizadas con la API.
-- **Interfaz Moderna**: Utiliza Bootstrap para un diseño limpio y responsivo.
+- **Gestión de usuarios**: crea o cambia usuarios de forma dinámica.
+- **Agregar tareas**: crea nuevas tareas y sincronízalas automáticamente con el backend.
+- **Actualizar tareas**: cambia el estado de una tarea entre completada y pendiente.
+- **Eliminar tareas**: elimina tareas individuales o borra toda la lista.
+- **Sincronización en tiempo real**: mantiene las tareas sincronizadas con la API.
+- **Interfaz moderna**: utiliza Bootstrap para un diseño limpio y responsivo.
 
 ## Instalación
 
@@ -38,7 +39,7 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina local:
 
 ## Configuración de la API
 
-La aplicación está configurada para interactuar con la API REST proporcionada en `https://playground.4geeks.com/todo`. Asegúrate de que la API esté funcionando correctamente para que la aplicación pueda sincronizar los datos.
+La aplicación está configurada para interactuar con la API REST proporcionada en `https://playground.4geeks.com/todo`. Asegúrate de que la API esté funcionando correctamente para que la aplicación pueda sincronizar los datos.    
 
 ## Estructura del Proyecto
 
@@ -58,30 +59,34 @@ src/
 
 ## Uso
 
-### Agregar una Tarea
-1. Escribe una tarea en el campo de entrada.
-2. Presiona `Enter` para agregarla a la lista y sincronizarla con la API.
+### Crear o cambiar usuario
+1. Ingrese un nombre de usuario en el campo de entrada.
+2. Haga clic en `Establecer usuario` para crear o cambiar usuarios.
 
-### Actualizar una Tarea
-1. Haz clic en el botón para alternar el estado de la tarea entre "Completed" y "Pending".
+### Agregar una tarea
+1. Escriba una tarea en el campo de entrada.
+2. Presione `Enter` para agregarla a la lista y sincronizarla con la API.
 
-### Eliminar una Tarea
-1. Haz clic en el botón de eliminar (`✖`) para borrar una tarea específica.
+### Actualizar una tarea
+1. Haga clic en el botón para alternar el estado de la tarea entre "Completada" y "Pendiente".
 
-### Limpiar Todas las Tareas
-1. Presiona el botón `Clear All Tasks` para eliminar todas las tareas.
+### Eliminar una tarea
+1. Haga clic en el botón eliminar (`✖`) para eliminar una tarea específica.
 
-## Tecnologías Utilizadas
+### Borrar todas las tareas
+1. Presione el botón `Borrar todas las tareas` para eliminar todas las tareas.
 
-- **React**: Para construir la interfaz de usuario.
-- **Bootstrap**: Para estilización y diseño responsivo.
-- **API REST**: Para la sincronización de datos en tiempo real.
+## Tecnologías utilizadas
 
-## Próximas Mejoras
+- **React**: para crear la interfaz de usuario.
+- **Bootstrap**: para el estilo y el diseño responsivo.
+- **REST API**: Para sincronización de datos en tiempo real.
+
+## Próximas mejoras
 
 - **Filtros**: Agregar opciones para filtrar tareas completadas y pendientes.
 - **Autenticación**: Incorporar autenticación de usuarios.
-- **Notificaciones**: Mostrar alertas al completar acciones como agregar o eliminar tareas.
+- **Notificaciones**: Mostrar alertas al finalizar como agregar acciones o eliminar tareas.
 
 ## Autor
 

@@ -1,9 +1,10 @@
 # To-do List App
 
-This is a task management app built in React, which syncs in real-time with a REST API. It allows you to dynamically add, view, update, and delete tasks.
+This is a task management app built in React, which syncs in real-time with a REST API. It allows you to dynamically add, view, update, delete tasks, and manage users.
 
 ## Features
 
+- **User Management**: Create or switch users dynamically.
 - **Add Tasks**: Create new tasks and automatically sync them with the backend.
 - **Update Tasks**: Change the status of a task between completed and pending.
 - **Delete Tasks**: Delete individual tasks or clear the entire list.
@@ -15,48 +16,53 @@ This is a task management app built in React, which syncs in real-time with a RE
 Follow these steps to run the project on your local machine:
 
 1. Clone the repository:
-```tap
+```bash
 git clone https://github.com/JulioRom/todo-api-react
 ```
 
 2. Navigate to the project directory:
-```tap
+```bash
 cd todo-api-react
 ```
 
 3. Install the dependencies:
-```tap
+```bash
 npm install
 ```
 
 4. Start the development server:
-```tap
-npm run developer
+```bash
+npm run dev
 ```
 
 5. Open your browser to `http://localhost:3000` to see the application in action.
 
-##API Configuration
+## API Configuration
 
 The application is configured to interact with the REST API provided at `https://playground.4geeks.com/todo`. Make sure that the API is working properly so that the application can sync data.
 
 ## Project Structure
 
-```plain text
+```plaintext
 src/
 ├── components/
-│ ├── InputField.jsx # Component for adding new tasks
-│ ├── TaskItem.jsx # Component for each individual task
-│ ├── TaskList.jsx # Component for the task list
-│ └── Todo.jsx # Main component of the application
+│   ├── InputField.jsx       # Component for adding new tasks
+│   ├── TaskItem.jsx         # Component for each individual task
+│   ├── TaskList.jsx         # Component for the task list
+│   ├── UserForm.jsx         # Component for managing users
+│   └── Todo.jsx             # Main component of the application
 ├── service/
-│ └── api.js # Functions to interact with the API
+│   └── api.js               # Functions to interact with the API
 ├── styles/
-│ └── index.css # Custom styles
-└── main.jsx # Main configuration
+│   └── index.css            # Custom styles
+└── main.jsx                 # Main configuration
 ```
 
 ## Usage
+
+### Create or Switch User
+1. Enter a username in the input field.
+2. Click `Set User` to create or switch users.
 
 ### Add a Task
 1. Type a task in the input field.
@@ -86,7 +92,7 @@ src/
 ## Author
 
 - **Developed by JulioRom**
-- **Contact:** [julioandrescampos@gmail.com](email to:julioandrescampos@gmail.com)
+- **Contact:** [julioandrescampos@gmail.com](mailto:julioandrescampos@gmail.com)
 - **GitHub:** [https://github.com/JulioRom](https://github.com/JulioRom)
 
 ## License
