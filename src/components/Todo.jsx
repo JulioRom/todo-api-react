@@ -2,16 +2,19 @@ import { useState, useEffect } from "react";
 import { fetchTasks, createTask, deleteTask, updateTask, createUser } from "../service/api";
 import TaskList from "./TaskList";
 import InputField from "./InputField";
+import UserForm from "./UserForm";
 
 const Todo = () => {
   const [tasks, setTasks] = useState([]);
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
   const [newUsername, setNewUsername] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (username) {
       const initializeTasks = async () => {
+        setLoading(true);
         try {
           const data = await fetchTasks(username);
           console.log("Fetched tasks:", data);
@@ -19,6 +22,8 @@ const Todo = () => {
         } catch (err) {
           setError("Failed to initialize tasks. Please try again later.");
           console.error(err);
+        } finally {
+          setLoading(false);
         }
       };
       initializeTasks();
@@ -29,7 +34,7 @@ const Todo = () => {
     if (error) {
       const timer = setTimeout(() => {
         setError(null);
-      }, 3000); // El mensaje de error se cierra después de 3 segundos
+      }, 8000); // El mensaje de error se cierra después de 3 segundos
       return () => clearTimeout(timer);
     }
   }, [error]);
@@ -110,35 +115,11 @@ const Todo = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center">TODO LIST</h1>
-      {error && <p className="text-danger text-center">{error}</p>}
-
-      <div className="mb-3">
-        <h5>Create or Switch User</h5>
-        <input
-          type="text"
-          className="form-control mb-2"
-          placeholder="Enter username"
-          value={newUsername}
-          onChange={(e) => setNewUsername(e.target.value)}
-        />
-        <button className="btn btn-primary" onClick={handleCreateUser}>
-          Create or Set User
-        </button>
-      </div>
-
-      <div className="mb-3">
-        <h6>Current User: {username}</h6>
-        <input
-          type="text"
-          className="form-control"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-
+      <h1 className="text-center text-primary">TODO LIST</h1>
+      {error && <p className="alert alert-danger text-center">{error}</p>}
+      <UserForm newUsername={newUsername} setNewUsername={setNewUsername} handleCreateUser={handleCreateUser} username={username} setUsername={setUsername} />
       <InputField onAddTask={handleAddTask} />
-      <TaskList tasks={tasks} onUpdateTask={handleUpdateTask} onDeleteTask={handleDeleteTask} />
+      {loading ? <p className="text-center">Loading tasks...</p> : <TaskList tasks={tasks} onUpdateTask={handleUpdateTask} onDeleteTask={handleDeleteTask} />}
       <button className="btn btn-danger mt-3" onClick={handleClearTasks}>
         Clear All Tasks
       </button>
